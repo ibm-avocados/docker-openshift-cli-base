@@ -23,11 +23,11 @@ FROM quay.io/ibm-avocados/openshift-cli-base:4.5
 
 - To build the OpenShift 4.4 version of the image run the following command:
 ```
-docker run -t <your image tag> .
+docker build -t <your image tag> .
 ```
 - To build the OpenShift 4.5 version of the image run the following command:
 ```
-docker run -t <your image tag> --build-arg OPENSHIFT_VERSION=4.5 --build-arg KUBECTL_VERSION=1.18.10 .
+docker build -t <your image tag> --build-arg OPENSHIFT_VERSION=4.5 --build-arg KUBECTL_VERSION=1.18.10 .
 ```
 
 ## License & Authors
