@@ -9,25 +9,29 @@ This container is designed to be a parent container and not run directly:
 
 It does the following for child containers:
 
-- Provides both the  `oc` and `ibmcloud` cli for specific versions of OpenShift 4.x (currently 4.4 and 4.5)
+- Provides both the  `oc` and `ibmcloud` cli for specific versions of OpenShift 4.x (currently 4.4, 4.5, 4.6)
 
 - Copies all scripts in a **scripts** folder in the  child containers build env to the **scripts** folder in the child image.
 
 The Dockerfile for a child container just needs the **FROM** statement:
 
 ```
-FROM quay.io/ibm-avocados/openshift-cli-base:4.5
+FROM quay.io/ibm-avocados/openshift-cli-base:4.6
 ```
 
 ## Building the image
 
-- To build the OpenShift 4.4 version of the image run the following command:
+- To build the OpenShift 4.6 version of the image run the following command:
 ```
 docker build -t <your image tag> .
 ```
 - To build the OpenShift 4.5 version of the image run the following command:
 ```
 docker build -t <your image tag> --build-arg OPENSHIFT_VERSION=4.5 --build-arg KUBECTL_VERSION=1.18.10 .
+```
+- To build the OpenShift 4.4 version of the image run the following command:
+```
+docker build -t <your image tag> --build-arg OPENSHIFT_VERSION=4.4 --build-arg KUBECTL_VERSION=1.17.13 .
 ```
 
 ## License & Authors
